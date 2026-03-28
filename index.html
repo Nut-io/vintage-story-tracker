@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vintage Story Account Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Vintage Story Account Tracker</h1>
+    <p id="subtitle">Tracking account growth since January 2024</p>
+  </header>
+
+  <main>
+    <div class="stats">
+      <div class="stat-box">
+        <span class="stat-label">Total accounts</span>
+        <span class="stat-value" id="total">—</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">New this month</span>
+        <span class="stat-value" id="monthly">—</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Last updated</span>
+        <span class="stat-value" id="updated">—</span>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <h2>New Accounts Per Month</h2>
+      <canvas id="newChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <h2>Total Accounts Over Time</h2>
+      <canvas id="totalChart"></canvas>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="chart.js"></script>
+</body>
+</html>
