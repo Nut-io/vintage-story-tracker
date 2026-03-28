@@ -1,0 +1,32 @@
+name: Scrape Vintage Story Accounts
+
+on:
+  schedule:
+    - cron: '0 6 1 * *'  # runs at 6am on the 1st of every month
+  workflow_dispatch:       # lets you trigger it manually from GitHub
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run scraper
+        run: python scraper/scrape.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/data.csv
+          git diff --staged --quiet || git commit -m "Update account data"
+          git push
