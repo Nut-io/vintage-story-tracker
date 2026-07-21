@@ -1,3 +1,3 @@
 # vintage-story-tracker
-nut-io.github.io/vintage-story-tracker/
+nutio-dev.github.io/vintage-story-tracker/
 
